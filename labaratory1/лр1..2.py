@@ -1,8 +1,14 @@
-print("Матвієнко Марія Едуардівна \nКМ-92\nЛабораторна робота 1,варіант 9 \n Підрахувати кількість цілих серед чисел а, b, с (ввеенні з клавіатури).")
+'''Підрахувати кількість цілих серед чисел а, b, с (ввеенні з клавіатури).'''
 
-a=float(input("введите первое число "))
-b=float(input("введите второе число "))
-c=float(input("введите третье число"))
+import re
+def int_validator(message):
+    n = input(message)
+    while not bool(re.match(r'\d+', n)):
+        n = input(message)
+    return float(n)
+a = int_validator('введите первое число:')
+b = int_validator('введите второе число:')
+c = int_validator('введите третье число:')
 
 if float.is_integer(b) and float.is_integer(c) and float.is_integer(a):
   print("Цілих чисел-3")

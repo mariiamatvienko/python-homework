@@ -1,12 +1,20 @@
-print("Матвієнко Марія Едуардівна \nКМ-92\nЛабораторна робота 1,варіант 9 \nОбчислення конкретної функції, в залежності від введеного значення х")
+'''Обчислення конкретної функції, в залежності від введеного значення х'''
 
 import math
-x=float(input("введіть число"))
-if x<=1 and x>=0:
-    x = x ** 2 - x
-    print("F(x)=",x)
+import re
+
+def int_validator(message):
+    x = input(message)
+    while not bool(re.match(r'^\d+$', x)):
+        x = input(message)
+    return float(x)
+
+x = int_validator("enter x: ")
+
+if x <= 1 and x >= 0:
+    b = x ** 2 - x
+    print("F(x)=", b)
 
 else:
-   if x>1 or x<0:
-     x=x**2-math.sin(math.pi*x**2)
-     print("F(x)=",x)
+    if x > 1 or x < 0:
+        print("F(x)=", x ** 2 - math.sin(math.pi * x ** 2))
